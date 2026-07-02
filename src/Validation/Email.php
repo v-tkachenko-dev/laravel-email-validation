@@ -16,13 +16,26 @@ class Email
      */
     private string $tld;
 
+    /** @var string $email */
+    public string $email;
+
     public function __construct(
-        public string $email,
+        string $email,
     ) {
-        $this->email = strtolower($email);
         $this
+            ->setEmail($email)
             ->setDomain()
             ->setRegistrableDomain();
+    }
+
+    /**
+     * @param string $email
+     * @return static
+     */
+    private function setEmail(string $email): self
+    {
+        $this->email = strtolower($email);
+        return $this;
     }
 
     /**

@@ -28,6 +28,11 @@
             "Silassiai\\LaravelEmailValidation\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Silassiai\\LaravelEmailValidation\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Silas de Rooy",
@@ -36,5 +41,9 @@
     ],
     "require": {
         "php": "^8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5 || ^11.5 || ^12.0",
+        "illuminate/support": "^10.0 || ^11.0 || ^12.0"
     }
 }

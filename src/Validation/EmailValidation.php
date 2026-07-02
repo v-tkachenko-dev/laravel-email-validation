@@ -26,6 +26,15 @@ class EmailValidation
      */
     public function for(string $email): self
     {
+        return $this->setEmail($email);
+    }
+
+    /**
+     * @param string $email
+     * @return $this
+     */
+    private function setEmail(string $email): self
+    {
         $this->email = new Email($email);
         return $this;
     }
@@ -81,7 +90,7 @@ class EmailValidation
      *
      * @return EmailValidation
      */
-    public function setCharacterDiffLevel(): self
+    private function setCharacterDiffLevel(): self
     {
         $this->characterDiffLevel = (strlen($this->email->getDomainName()) > 6) ? 2 : 1;
         return $this;
